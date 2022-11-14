@@ -1,7 +1,8 @@
-module Hello exposing (..)
+module Main exposing (..)
 import Browser
 import Html exposing (Html, button, div, text)
 import Html.Events exposing (onClick)
+import Html.Attributes exposing (class)
 
 main =
   Browser.sandbox { init = 0, update = update, view = view }
@@ -19,6 +20,6 @@ update msg model =
 view model =
   div []
     [ button [ onClick Decrement ] [ text "-" ]
-    , div [] [ text (String.fromInt model) ]
+    , div [class "text-3xl font-bold underline"] [ text (String.fromInt model) ]
     , button [ onClick Increment ] [ text "+" ]
     ]
